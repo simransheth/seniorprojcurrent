@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "457449767460",
+    "firebase_url": "https://seniorproject-bedb0.firebaseio.com",
+    "project_id": "seniorproject-bedb0",
+    "storage_bucket": "seniorproject-bedb0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457449767460:android:93c935fdfd045087",
+        "android_client_info": {
+          "package_name": "com.example.simransheth.seniorproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "457449767460-c3l0d202l7qmi0tsf77i15gn876ubb28.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.simransheth.seniorproject",
+            "certificate_hash": "5b4b8d23414173bb708ca39a5e85a074520c7d7d"
+          }
+        },
+        {
+          "client_id": "457449767460-fh55ptgn0n26n35hkbniqe9nbe4ioo1k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMldTw8RIUZumBK53FiluBALR4l1E0-8U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "457449767460-fh55ptgn0n26n35hkbniqe9nbe4ioo1k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
