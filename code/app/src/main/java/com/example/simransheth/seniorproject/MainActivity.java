@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mAuth.signInWithEmailAndPassword(emailID.getText().toString(), password.getText().toString())
+                /*mAuth.signInWithEmailAndPassword(emailID.getText().toString(), password.getText().toString())
                         .addOnCompleteListener(curr, (task) --> {
                         emailID.getText().toString();
                         if(task.isSuccessful()){
@@ -43,10 +43,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else {
                             messageDisplay.setText("Login Failed")
-                        }
-        });
-    }
+                        }*/
+                messageDisplay.setText("Login Successful");
+        }
+    });
 
 
 
-}
+}}
