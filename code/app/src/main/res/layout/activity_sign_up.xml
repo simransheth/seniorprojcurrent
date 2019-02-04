@@ -67,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@id/confirmpassword" />
 
     <Button
-        android:id="@+id/signIn"
+        android:id="@+id/signInBtn"
         android:layout_width="265dp"
         android:layout_height="53dp"
         android:layout_gravity="center"
