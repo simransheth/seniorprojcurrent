@@ -6,8 +6,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.support.annotation.NonNull;
+import android.util.Log;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.AuthResult;
+
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -46,8 +53,8 @@ public class SignUpActivity extends AppCompatActivity {
 
 
                 if(inputpassword.equals(inputconfirmpassword) {
-                mAuth.createUserWithEmailAndPassword(, password.getText().toString())
-                        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                mAuth.createUserWithEmailAndPassword(email, inputpassword)
+                        .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
