@@ -1,6 +1,7 @@
 package com.example.simransheth.seniorproject;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -17,7 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.AuthResult;
 
-
+// https://androidstudy.com/2017/04/11/android-firebase-tutorial-user-registration/
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -59,6 +60,16 @@ public class SignUpActivity extends AppCompatActivity {
                 validateRegisterDetails();
             }
         });
+
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void validateRegisterDetails() {
@@ -88,7 +99,9 @@ public class SignUpActivity extends AppCompatActivity {
             password.setError("Please Enter Secure Password");
         }
 
-        if ()
+        if (!inputconfirmpassword.equals(password)){
+            password.setError("Passwords do not match");
+        }
 
         registerUser();
     }
@@ -99,7 +112,7 @@ public class SignUpActivity extends AppCompatActivity {
         /**
          * Show Progress Bar when registering a new User
          */
-        pDialog = new ProgressDialog(LoginActivity.this);
+        pDialog = new ProgressDialog(SignUpActivity.this);
         pDialog.setMessage("Signing Up...");
         pDialog.setIndeterminate(false);
         pDialog.setCancelable(false);
@@ -119,16 +132,15 @@ public class SignUpActivity extends AppCompatActivity {
                         //checking if success
                         if (task.isSuccessful()) {
                             //display some message here
-                            Toast.makeText(LoginActivity.this, "User Registered Successfully!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this, "User Registered Successfully!", Toast.LENGTH_SHORT).show();
                         } else {
                             //display some message here
-                            Toast.makeText(LoginActivity.this, "User Registration Failed!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this, "User Registration Failed!", Toast.LENGTH_SHORT).show();
                         }
 
                     }
                 });
     }
-
 
 
 }

@@ -1,5 +1,6 @@
 package com.example.simransheth.seniorproject;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,11 +10,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
+    // private FirebaseAuth mAuth;
     private TextView header;
-    private EditText emailID;
-    private EditText password;
-    private TextView messageDisplay;
     private Button loginBtn;
     private Button forgotPasswordBtn;
     private Button newUserBtn;
@@ -23,19 +21,39 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mAuth = FirebaseAuth.getInstance();
-
+//        mAuth = FirebaseAuth.getInstance();
+//
         header = findViewById(R.id.header);
-        emailID = findViewById(R.id.emailID);
-        password = findViewById(R.id.password);
         loginBtn = findViewById(R.id.loginBtn);
         forgotPasswordBtn = findViewById(R.id.forgotPasswordBtn);
         newUserBtn = findViewById(R.id.newUserBtn);
-        messageDisplay = findViewById(R.id.messageDisplay);
+
+
+        newUserBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
+
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*mAuth.signInWithEmailAndPassword(emailID.getText().toString(), password.getText().toString())
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        forgotPasswordBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ForgotPasswordActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        /*mAuth.signInWithEmailAndPassword(emailID.getText().toString(), password.getText().toString())
                         .addOnCompleteListener(curr, (task) --> {
                         emailID.getText().toString();
                         if(task.isSuccessful()){
@@ -43,10 +61,10 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else {
                             messageDisplay.setText("Login Failed")
-                        }*/
-                messageDisplay.setText("Login Successful");
-        }
-    });
+//                        }*/
+//                messageDisplay.setText("Login Successful");
+//        }
+//    });
 
 
 
