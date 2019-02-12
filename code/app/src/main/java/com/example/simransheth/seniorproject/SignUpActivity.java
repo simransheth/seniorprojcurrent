@@ -1,7 +1,9 @@
 package com.example.simransheth.seniorproject;
 
+import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,9 +18,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.AuthResult;
 
 
+
 public class SignUpActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+
     private TextView header;
     private EditText emailID;
     private EditText password;
@@ -26,6 +30,12 @@ public class SignUpActivity extends AppCompatActivity {
     private TextView messageDisplay;
     private Button loginBtn;
     private Button newUserBtn;
+
+    private ProgressDialog pDialog;
+
+    private String email;
+    private  String inputpassword;
+    private String inputconfirmpassword;
 
 
     @Override
@@ -46,38 +56,79 @@ public class SignUpActivity extends AppCompatActivity {
         newUserBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
-                final String email = emailID.getText().toString();
-                final String inputpassword = password.getText().toString();
-                final String inputconfirmpassword = confirmpassword.getText().toString();
-
-
-                if(inputpassword.equals(inputconfirmpassword) {
-                mAuth.createUserWithEmailAndPassword(email, inputpassword)
-                        .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    // Sign in success, update UI with the signed-in user's information
-                                    Log.d(TAG, "createUserWithEmail:success");
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    updateUI(user);
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                    Toast.makeText(EmailPasswordActivity.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
-                                    updateUI(null);
-                                }
-
-                                // ...
-                            }
-                        });
+                validateRegisterDetails();
             }
-
-            else
-            {
-
-            }
+        });
     }
+
+    private void validateRegisterDetails() {
+        /**
+         * We convert user input from edit text boxes  to string,
+         * to do validations and also be able to send it to the server!
+         */
+        email = emailID.getText().toString().trim();
+        inputpassword = password.getText().toString().trim();
+        inputconfirmpassword = confirmpassword.getText().toString().trim();
+
+        /**
+         * We check for empty email field here
+         *
+         * if empty, we show an error message!
+         */
+        if (TextUtils.isEmpty(email)) {
+            emailID.setError("Please Enter Email Adress");
+        }
+
+        /**
+         * We check for empty password field here
+         *
+         * if empty, we show an error message!
+         */
+        if (TextUtils.isEmpty(inputpassword)) {
+            password.setError("Please Enter Secure Password");
+        }
+
+        if ()
+
+        registerUser();
+    }
+
+
+    private void registerUser() {
+
+        /**
+         * Show Progress Bar when registering a new User
+         */
+        pDialog = new ProgressDialog(LoginActivity.this);
+        pDialog.setMessage("Signing Up...");
+        pDialog.setIndeterminate(false);
+        pDialog.setCancelable(false);
+        pDialog.show();
+
+        //creating a new user here
+        mAuth.createUserWithEmailAndPassword(email, inputpassword)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        /**
+                         * We have recieved a response, we need to close/exit the Progress Dialog now
+                         */
+                        pDialog.dismiss();
+
+                        //checking if success
+                        if (task.isSuccessful()) {
+                            //display some message here
+                            Toast.makeText(LoginActivity.this, "User Registered Successfully!", Toast.LENGTH_SHORT).show();
+                        } else {
+                            //display some message here
+                            Toast.makeText(LoginActivity.this, "User Registration Failed!", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
+    }
+
+
+
 }
