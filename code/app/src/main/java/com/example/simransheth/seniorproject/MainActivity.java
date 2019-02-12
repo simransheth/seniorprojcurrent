@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         /*mAuth.signInWithEmailAndPassword(emailID.getText().toString(), password.getText().toString())
                         .addOnCompleteListener(curr, (task) --> {
                         emailID.getText().toString();

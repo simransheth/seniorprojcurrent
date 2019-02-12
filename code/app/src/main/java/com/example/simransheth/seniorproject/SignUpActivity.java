@@ -99,7 +99,7 @@ public class SignUpActivity extends AppCompatActivity {
             password.setError("Please Enter Secure Password");
         }
 
-        if (!inputconfirmpassword.equals(password)){
+        if (!inputconfirmpassword.equals(inputpassword)){
             password.setError("Passwords do not match");
         }
 
