@@ -145,7 +145,8 @@ public class LoginActivity extends AppCompatActivity {
                             //start the profile activity
                             finish();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        }else {
+                        }
+                        else {
                             Toast.makeText(LoginActivity.this, "User does not exist", Toast.LENGTH_SHORT).show();
                         }
                     }
