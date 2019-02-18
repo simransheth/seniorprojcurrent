@@ -33,7 +33,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     private ProgressDialog pDialog;
 
     private String email;
-
+    private static final String TAG = "ForgotPasswordActivity"
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +79,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
+                                    Log.d(TAG, "Email sent.");
                                     messageDisplay.setText("Reset Email Sent Successfully!");
                                     Toast.makeText(ForgotPasswordActivity.this, "Reset Email Sent Successfully!", Toast.LENGTH_SHORT).show();
                                 }
