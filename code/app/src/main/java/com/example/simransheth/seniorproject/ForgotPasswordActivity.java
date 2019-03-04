@@ -33,7 +33,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     private ProgressDialog pDialog;
 
     private String email;
-    private static final String TAG = "ForgotPasswordActivity"
+    private static final String TAG = "ForgotPasswordActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
