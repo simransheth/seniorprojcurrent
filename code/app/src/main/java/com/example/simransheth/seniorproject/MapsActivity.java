@@ -46,7 +46,7 @@ public class MapsActivity extends FragmentActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-        if(Build.VERSION.SDK_INT > = Build.VERSION_CODES.M){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             checkUserLocationPermission();
         }
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
