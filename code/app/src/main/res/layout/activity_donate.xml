@@ -8,10 +8,10 @@
 
     <TextView
         android:id="@+id/header"
-        android:layout_width="381dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Donate Here! - Now!"
+        android:text="Donate Here - Now!"
         android:textAlignment="center"
         android:textSize="30dp"
         app:layout_constraintHorizontal_bias="0.0"
@@ -20,61 +20,74 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/emailID"
+        android:id="@+id/address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:hint="Email ID"
+        android:hint="Address"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header" />
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
+    <Switch
+        android:id="@+id/locationSwitch"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:hint="Password"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Use Current Location              "
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/emailID" />
+        app:layout_constraintTop_toBottomOf="@id/address" />
 
     <EditText
-        android:id="@+id/confirmpassword"
+        android:id="@+id/phoneNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:hint="Confirm Password"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginTop="72dp"
+        android:hint="Phone Number"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password" />
+        app:layout_constraintTop_toBottomOf="@id/address" />
+
+    <TextView
+        android:id="@+id/detailsOfFoodView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:hint="Please mention details about the food: quantity, or any speicific stoarge requirements"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumber" />
+
+    <EditText
+        android:id="@+id/detailsOfFood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:hint="Enter Details Here"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailsOfFoodView" />
 
 
     <Button
-        android:id="@+id/createAccBtn"
+        android:id="@+id/donateBtn"
         android:layout_width="265dp"
         android:layout_height="53dp"
         android:layout_gravity="center"
-        android:layout_marginTop="36dp"
-        android:text="Create Account"
-        app:layout_constraintHorizontal_bias="0.504"
+        android:layout_marginTop="92dp"
+        android:text="Donate"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/confirmpassword" />
-
-    <Button
-        android:id="@+id/signInBtn"
-        android:layout_width="265dp"
-        android:layout_height="53dp"
-        android:layout_gravity="center"
-        android:text="Sign In"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/createAccBtn" />
+        app:layout_constraintTop_toBottomOf="@id/detailsOfFood" />
 
 
 </android.support.constraint.ConstraintLayout>
