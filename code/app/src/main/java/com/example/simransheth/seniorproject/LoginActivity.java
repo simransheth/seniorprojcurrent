@@ -144,7 +144,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             //start the profile activity
                             finish();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), DonorVolunteerPage.class));
                         }
                         else {
                             Toast.makeText(LoginActivity.this, "User does not exist", Toast.LENGTH_SHORT).show();
