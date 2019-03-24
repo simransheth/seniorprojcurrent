@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/header"
-        android:layout_width="381dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Welcome to 'Robin Food!' \n\nThe app that connects food donors to volunteers"
@@ -34,17 +34,6 @@
         app:layout_constraintTop_toBottomOf="@id/header" />
 
     <Button
-        android:id="@+id/forgotPasswordBtn"
-        android:layout_width="265dp"
-        android:layout_height="53dp"
-        android:layout_gravity="center"
-        android:text="Forgot Password?!"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/newUserBtn" />
-
-    <Button
         android:id="@+id/newUserBtn"
         android:layout_width="265dp"
         android:layout_height="53dp"
@@ -54,6 +43,17 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/loginBtn" />
+
+    <Button
+        android:id="@+id/forgotPasswordBtn"
+        android:layout_width="265dp"
+        android:layout_height="53dp"
+        android:layout_gravity="center"
+        android:text="Forgot Password?!"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newUserBtn" />
 
 
 </android.support.constraint.ConstraintLayout>

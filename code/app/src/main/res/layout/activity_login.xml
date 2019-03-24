@@ -6,15 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-
     <TextView
         android:id="@+id/header"
-        android:layout_width="381dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Welcome to 'Robin Food!' \nLogin here!"
         android:textAlignment="center"
         android:textSize="30dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteY="16dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/emailID"
