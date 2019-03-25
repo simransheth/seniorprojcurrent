@@ -46,8 +46,8 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         emailID = findViewById(R.id.emailID);
         messageDisplay = findViewById(R.id.messageDisplay);
         forgotPasswordBtn = findViewById(R.id.forgotPasswordBtn);
-        newUserBtn = findViewById(R.id.createAccBtn);
-        loginBtn = findViewById(R.id.signInBtn);
+        newUserBtn = findViewById(R.id.newUserBtn);
+        loginBtn = findViewById(R.id.loginBtn);
 
         email = emailID.getText().toString().trim();
 

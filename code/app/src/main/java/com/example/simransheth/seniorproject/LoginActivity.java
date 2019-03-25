@@ -45,8 +45,8 @@ public class LoginActivity extends AppCompatActivity {
         emailID = findViewById(R.id.emailID);
         password = findViewById(R.id.password);
         messageDisplay = findViewById(R.id.messageDisplay);
-        loginBtn = findViewById(R.id.signInBtn);
-        newUserBtn = findViewById(R.id.createAccBtn);
+        loginBtn = findViewById(R.id.loginBtn);
+        newUserBtn = findViewById(R.id.newUserBtn);
         forgotPasswordBtn = findViewById(R.id.forgotPasswordBtn);
 
         //if the objects getcurrentuser method is not null
