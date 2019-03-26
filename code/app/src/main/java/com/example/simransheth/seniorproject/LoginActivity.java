@@ -53,9 +53,10 @@ public class LoginActivity extends AppCompatActivity {
         //means user is already logged in
         if (mAuth.getCurrentUser() != null) {
             //close this activity
-            finish();
             //opening profile activity
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
+
         }
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -131,7 +132,7 @@ public class LoginActivity extends AppCompatActivity {
         pDialog = new ProgressDialog(LoginActivity.this);
         pDialog.setMessage("Signing In...");
         pDialog.setIndeterminate(false);
-        pDialog.setCancelable(false);
+        pDialog.setCancelable(true);
         pDialog.show();
 
         //logging in the user
@@ -143,12 +144,14 @@ public class LoginActivity extends AppCompatActivity {
                         //if the task is successfull
                         if (task.isSuccessful()) {
                             //start the profile activity
-                            finish();
+
                             startActivity(new Intent(getApplicationContext(), DonorVolunteerPage.class));
+                            finish();
                         }
                         else {
                             Toast.makeText(LoginActivity.this, "User does not exist", Toast.LENGTH_SHORT).show();
                         }
+                        pDialog.dismiss();
                     }
                 });
 
