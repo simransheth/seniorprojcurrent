@@ -54,8 +54,9 @@ public class LoginActivity extends AppCompatActivity {
         if (mAuth.getCurrentUser() != null) {
             //close this activity
             //opening profile activity
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            finish();
+            mAuth.signOut();
+            //startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            //finish();
 
         }
 

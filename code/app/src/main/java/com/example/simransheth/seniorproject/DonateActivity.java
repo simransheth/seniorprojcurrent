@@ -35,6 +35,8 @@ public class DonateActivity extends AppCompatActivity {
         donateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 if(locationSwitch.isChecked()){
                     Intent intent = new Intent(DonateActivity.this, MapsActivity.class);
                     startActivity(intent);
